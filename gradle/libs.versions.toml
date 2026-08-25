@@ -43,6 +43,8 @@ leakcanary = "2.14"
 #----- Code Quality & Analysis
 detekt = "1.23.8"
 ktlint = "13.1.0"
+appcompat = "1.8.0"
+material = "1.14.0"
 
 [libraries]
 #------  core & Lifecycle & coroutine
@@ -90,6 +92,13 @@ retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit
 okhttp-logging = { module = "com.squareup.okhttp3:logging-interceptor", version.ref = "okhttp" }
 #----- Memory Leak Detection
 squareup-leakcanary = { module = "com.squareup.leakcanary:leakcanary-android", version.ref = "leakcanary" }
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+#----- Convention Plugin
+android-gradlePlugin = { group = "com.android.tools.build", name = "gradle", version.ref = "agp" }
+kotlin-gradlePlugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
+compose-compiler-gradlePlugin = { group = "org.jetbrains.kotlin", name = "compose-compiler-gradle-plugin", version.ref = "kotlin" }
+
 
 
 [plugins]
