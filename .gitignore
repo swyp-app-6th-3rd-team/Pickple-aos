@@ -1,0 +1,93 @@
+##################################
+# Local configuration & secrets
+##################################
+local.properties
+*.jks
+*.keystore
+keystore.properties
+key.properties
+*.properties
+!gradle.properties
+!gradle-wrapper.properties
+
+##################################
+# Build outputs
+##################################
+build/
+bin/
+out/
+gen/
+*.apk
+*.aab
+*.ap_
+*.aar
+*.jar
+*.class
+*.dex
+output.json
+output-metadata.json
+
+##################################
+# Gradle
+##################################
+.gradle/
+.gradletasknamecache
+.gradle-scan/
+/gradle-daemon-outputs/
+!gradle/wrapper/gradle-wrapper.jar
+
+##################################
+# Kotlin
+##################################
+.kotlin/
+
+##################################
+# Android Studio / IntelliJ
+##################################
+.idea/
+*.iml
+*.ipr
+*.iws
+.navigation/
+captures/
+.externalNativeBuild/
+.cxx/
+
+##################################
+# NDK / C++
+##################################
+obj/
+
+##################################
+# Firebase / Google services
+##################################
+google-services.json
+
+##################################
+# Profiling & logs
+##################################
+*.hprof
+*.prof
+*.capture
+*.log
+hs_err_pid*
+replay_pid*
+
+##################################
+# OS
+##################################
+.DS_Store
+Thumbs.db
+
+##################################
+# 기타 (플러그인/서드파티 관련)
+##################################
+gen-external-apklibs
+com_crashlytics_export_strings.xml
+crashlytics.properties
+crashlytics-build.properties
+fabric.properties
+atlassian-ide-plugin.xml
+.idea_modules/
+*~
+*.swp
