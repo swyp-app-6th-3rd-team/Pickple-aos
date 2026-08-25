@@ -16,4 +16,17 @@ plugins {
     alias(libs.plugins.secrets.gradle) apply false
     //----- Code Quality & Analysis
     alias(libs.plugins.detekt) apply false
+    alias(libs.plugins.ktlint) apply false
+}
+
+// ktlint에서 Gradle Script는 검사 제외
+subprojects {
+    pluginManager.withPlugin("org.jlleitschuh.gradle.ktlint") {
+        extensions.configure<org.jlleitschuh.gradle.ktlint.KtlintExtension> {
+            filter {
+                exclude("**/*.gradle.kts")
+                exclude("**/build/**")
+            }
+        }
+    }
 }

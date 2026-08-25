@@ -9,6 +9,7 @@ plugins {
     alias(libs.plugins.kotlin.parcelize)
     //----- Code Quality & Analysis
     alias(libs.plugins.detekt)
+    alias(libs.plugins.ktlint)
 }
 
 android {
@@ -46,6 +47,8 @@ android {
 kotlin {
     jvmToolchain(21)
 }
+
+
 
 dependencies {
     implementation(platform(libs.androidx.compose.bom))

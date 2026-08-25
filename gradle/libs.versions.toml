@@ -42,6 +42,7 @@ secrets = "2.0.1"
 leakcanary = "2.14"
 #----- Code Quality & Analysis
 detekt = "1.23.8"
+ktlint = "13.1.0"
 
 [libraries]
 #------  core & Lifecycle & coroutine
@@ -108,7 +109,7 @@ hilt-gradle = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 secrets-gradle = { id = "com.google.android.libraries.mapsplatform.secrets-gradle-plugin", version.ref = "secrets" }
 #----- Code Quality & Analysis
 detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
-
+ktlint = { id = "org.jlleitschuh.gradle.ktlint", version.ref = "ktlint" }
 
 [bundles]
 android-core = [
