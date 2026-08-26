@@ -26,3 +26,7 @@ dependencyResolutionManagement {
 rootProject.name = "Pickple"
 include(":app")
 include(":core")
+include(":features:onboarding")
+include(":features:home")
+include(":features:community")
+include(":features:mypage")
