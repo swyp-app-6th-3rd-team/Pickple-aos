@@ -16,7 +16,6 @@ dependencies {
 
 gradlePlugin {
     plugins {
-        // --- 모듈 별
         register("application") {
             id = "pickple.application"
             implementationClass = "com.swyp.pickple.ApplicationConventionPlugin"
@@ -25,14 +24,13 @@ gradlePlugin {
             id = "pickple.feature"
             implementationClass = "com.swyp.pickple.FeatureConventionPlugin"
         }
-        // --- 플러그인
-        register("lint") {
-            id = "pickple.lint"
-            implementationClass = "com.swyp.pickple.LintConventionPlugin"
+        register("data") {
+            id = "pickple.data"
+            implementationClass = "com.swyp.pickple.DataConventionPlugin"
         }
-        register("common") {
-            id = "pickple.common"
-            implementationClass = "com.swyp.pickple.CommonConventionPlugin"
+        register("domain") {
+            id = "pickple.domain"
+            implementationClass = "com.swyp.pickple.DomainConventionPlugin"
         }
     }
 }

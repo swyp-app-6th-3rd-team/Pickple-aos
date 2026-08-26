@@ -1,14 +1,13 @@
 package com.swyp.pickple
 
 import com.swyp.pickple.extension.configureAndroidCommon
-import com.swyp.pickple.extension.configureAndroidCompose
 import com.swyp.pickple.extension.configureCommonPlugin
 import com.swyp.pickple.extension.configureKotlinAndroid
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.getByType
 
-class FeatureConventionPlugin : Plugin<Project> {
+class DataConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) {
         with(target) {
             with(pluginManager) {
@@ -18,7 +17,6 @@ class FeatureConventionPlugin : Plugin<Project> {
             configureKotlinAndroid()
             configureCommonPlugin()
             configureAndroidCommon()
-            configureAndroidCompose()
 
             val libraryExtension = extensions.getByType(com.android.build.api.dsl.LibraryExtension::class)
             libraryExtension.apply { }

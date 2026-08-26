@@ -22,5 +22,6 @@ internal fun Project.configureAndroidCompose() {
         val bom = libs.findLibrary("androidx-compose-bom").get()
         add("implementation", platform(bom))
         add("implementation", libs.findBundle("compose").get())
+        add("implementation", libs.findLibrary("androidx-navigation-compose").get())
     }
 }
