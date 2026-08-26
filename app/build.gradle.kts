@@ -22,4 +22,8 @@ android {
 
 dependencies {
     implementation(project(":core"))
+    implementation(project(":features:home"))
+    implementation(project(":features:community"))
+    implementation(project(":features:onboarding"))
+    implementation(project(":features:mypage"))
 }
