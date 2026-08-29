@@ -1,5 +1,6 @@
 plugins {
     id("pickple.application")
+    alias(libs.plugins.secrets.gradle)
 }
 
 android {
@@ -18,10 +19,17 @@ android {
             }
         }
     }
+    buildFeatures {
+        buildConfig = true
+    }
+}
+secrets {
+    propertiesFileName = "local.properties"
 }
 
 dependencies {
     implementation(project(":core"))
+    implementation(project(":data"))
     implementation(project(":features:home"))
     implementation(project(":features:community"))
     implementation(project(":features:onboarding"))
