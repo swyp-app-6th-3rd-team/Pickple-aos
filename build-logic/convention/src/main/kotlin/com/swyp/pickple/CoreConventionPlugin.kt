@@ -1,13 +1,14 @@
 package com.swyp.pickple
 
 import com.swyp.pickple.extension.configureAndroidCommon
+import com.swyp.pickple.extension.configureAndroidCompose
 import com.swyp.pickple.extension.configureCommonPlugin
 import com.swyp.pickple.extension.configureKotlinAndroid
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.dependencies
 
-class DataConventionPlugin : Plugin<Project> {
+class CoreConventionPlugin  : Plugin<Project> {
     override fun apply(target: Project) {
         with(target) {
             with(pluginManager) {
@@ -16,12 +17,12 @@ class DataConventionPlugin : Plugin<Project> {
 
             configureKotlinAndroid()
             configureCommonPlugin()
-            configureAndroidCommon()
+            configureAndroidCommon(false)
+            configureAndroidCompose()
 
             dependencies {
                 add("implementation", project(":domain"))
             }
-
         }
     }
 }

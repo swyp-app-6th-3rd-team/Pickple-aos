@@ -24,6 +24,10 @@ gradlePlugin {
             id = "pickple.feature"
             implementationClass = "com.swyp.pickple.FeatureConventionPlugin"
         }
+        register("core") {
+            id = "pickple.core"
+            implementationClass = "com.swyp.pickple.CoreConventionPlugin"
+        }
         register("data") {
             id = "pickple.data"
             implementationClass = "com.swyp.pickple.DataConventionPlugin"

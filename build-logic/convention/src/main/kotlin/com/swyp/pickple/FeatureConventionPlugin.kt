@@ -6,7 +6,7 @@ import com.swyp.pickple.extension.configureCommonPlugin
 import com.swyp.pickple.extension.configureKotlinAndroid
 import org.gradle.api.Plugin
 import org.gradle.api.Project
-import org.gradle.kotlin.dsl.getByType
+import org.gradle.kotlin.dsl.dependencies
 
 class FeatureConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) {
@@ -20,8 +20,9 @@ class FeatureConventionPlugin : Plugin<Project> {
             configureAndroidCommon()
             configureAndroidCompose()
 
-            val libraryExtension = extensions.getByType(com.android.build.api.dsl.LibraryExtension::class)
-            libraryExtension.apply { }
+            dependencies {
+                add("implementation", project(":domain"))
+            }
         }
     }
 }
