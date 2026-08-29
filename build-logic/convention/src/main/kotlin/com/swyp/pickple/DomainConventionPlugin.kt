@@ -1,5 +1,6 @@
 package com.swyp.pickple
 
+import com.swyp.pickple.extension.configureCommonDependencies
 import com.swyp.pickple.extension.configureCommonPlugin
 import org.gradle.api.JavaVersion
 import org.gradle.api.Plugin
@@ -15,6 +16,7 @@ class DomainConventionPlugin: Plugin<Project> {
                 apply("org.jetbrains.kotlin.jvm")
             }
 
+            configureCommonDependencies()
             configureCommonPlugin()
 
             extensions.configure<JavaPluginExtension> {

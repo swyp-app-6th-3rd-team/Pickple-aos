@@ -1,5 +1,5 @@
 plugins {
-    id("pickple.feature")
+    id("pickple.core")
 }
 
 android {
