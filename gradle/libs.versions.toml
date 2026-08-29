@@ -37,6 +37,9 @@ retrofit = "3.0.0"
 okhttp = "5.5.0"
 #----- secrets plugin
 secrets = "2.0.1"
+#----- Oauth 2.0
+kakao = "2.24.0"
+
 #--------------------------------- Development Tools
 #----- Memory Leak Detection
 leakcanary = "2.14"
@@ -51,6 +54,8 @@ material = "1.14.0"
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycleRuntimeKtx" }
 kotlinx-coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "coroutines" }
+kotlinx-coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "coroutines" }
+
 #------  Kotlinx Serialization
 kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinxSerialization" }
 retrofit-kotlinx-serialization-converter = { module = "com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter", version.ref = "retrofitSerializationConverter" }
@@ -98,7 +103,8 @@ material = { group = "com.google.android.material", name = "material", version.r
 android-gradlePlugin = { group = "com.android.tools.build", name = "gradle", version.ref = "agp" }
 kotlin-gradlePlugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
 compose-compiler-gradlePlugin = { group = "org.jetbrains.kotlin", name = "compose-compiler-gradle-plugin", version.ref = "kotlin" }
-
+#----- Oauth 2.0
+kakao-user = { module = "com.kakao.sdk:v2-user", version.ref = "kakao" }
 
 
 [plugins]

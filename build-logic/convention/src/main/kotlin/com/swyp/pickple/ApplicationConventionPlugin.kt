@@ -4,6 +4,7 @@ import com.swyp.pickple.extension.configureAndroidCommon
 import com.swyp.pickple.extension.configureAndroidCompose
 import com.swyp.pickple.extension.configureCommonPlugin
 import com.swyp.pickple.extension.configureKotlinAndroid
+import com.swyp.pickple.extension.configureSocialDependencies
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.api.artifacts.VersionCatalogsExtension
@@ -21,6 +22,7 @@ class ApplicationConventionPlugin : Plugin<Project> {
             configureCommonPlugin()
             configureAndroidCommon()
             configureAndroidCompose()
+            configureSocialDependencies()
 
             val applicationExtension = extensions.getByType(com.android.build.api.dsl.ApplicationExtension::class)
             applicationExtension.apply {
