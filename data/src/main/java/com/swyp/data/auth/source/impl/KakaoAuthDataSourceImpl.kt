@@ -19,15 +19,14 @@ class KakaoAuthDataSourceImpl @Inject constructor(
     override suspend fun login(): Result<String> =
         suspendCancellableCoroutine { continuation ->
             if (UserApiClient.instance.isKakaoTalkLoginAvailable(context)) {
-                loginWithKakaoTalkApp(context, continuation)
+                loginWithKakaoTalkApp(continuation)
             } else {
-                loginWithWebView(context, continuation)
+                loginWithKakaoAccount(continuation)
             }
         }
 
     // 카카오 앱을 통한 로그인 - 실패 시(사용자 취소 제외) 웹뷰 로그인으로 폴백/
     private fun loginWithKakaoTalkApp(
-        context: Context,
         continuation: CancellableContinuation<Result<String>>
     ) {
         UserApiClient.instance.loginWithKakaoTalk(context) { token, error ->
@@ -36,8 +35,9 @@ class KakaoAuthDataSourceImpl @Inject constructor(
                     continuation.resumeIfActive(Result.failure(error))
                 }
                 error != null -> {
+                    Timber.d("카카오톡 로그인 실패 → 카카오계정 로그인으로 fallback: ${error.message}")
                     // 카카오톡 앱 로그인 실패(취소 제외) → 웹뷰 로그인으로 재시도
-                    loginWithWebView(context, continuation)
+                    loginWithKakaoAccount(continuation)
                 }
                 token != null -> {
                     continuation.resumeIfActive(Result.success(token.accessToken))
@@ -52,8 +52,7 @@ class KakaoAuthDataSourceImpl @Inject constructor(
     }
 
     // 카카오 웹뷰 로그인
-    private fun loginWithWebView(
-        context: Context,
+    private fun loginWithKakaoAccount(
         continuation: CancellableContinuation<Result<String>>
     ) {
         UserApiClient.instance.loginWithKakaoAccount(context) { token, error ->
