@@ -3,9 +3,11 @@ package com.swyp.data.auth.di
 import com.swyp.data.auth.di.qualifier.AppleAuth
 import com.swyp.data.auth.di.qualifier.KakaoAuth
 import com.swyp.data.auth.repository.impl.AuthRepositoryImpl
+import com.swyp.data.auth.source.RemoteAuthDataSource
 import com.swyp.data.auth.source.SocialAuthDataSource
 import com.swyp.data.auth.source.impl.AppleAuthDataSourceImpl
 import com.swyp.data.auth.source.impl.KakaoAuthDataSourceImpl
+import com.swyp.data.auth.source.impl.RemoteAuthDataSourceImpl
 import com.swyp.domain.auth.repository.AuthRepository
 import dagger.Binds
 import dagger.Module
@@ -36,4 +38,10 @@ internal abstract class AuthDataModule {
     abstract fun bindAppleAuthDataSource(
         appleAuthDataSourceImpl: AppleAuthDataSourceImpl
     ): SocialAuthDataSource
+
+    @Binds
+    @Singleton
+    abstract fun bindRemoteAuthDataSource(
+        remoteAuthDataSource: RemoteAuthDataSourceImpl
+    ): RemoteAuthDataSource
 }
