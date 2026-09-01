@@ -103,8 +103,7 @@ material = { group = "com.google.android.material", name = "material", version.r
 android-gradlePlugin = { group = "com.android.tools.build", name = "gradle", version.ref = "agp" }
 kotlin-gradlePlugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
 compose-compiler-gradlePlugin = { group = "org.jetbrains.kotlin", name = "compose-compiler-gradle-plugin", version.ref = "kotlin" }
-#----- Oauth 2.0
-kakao-user = { module = "com.kakao.sdk:v2-user", version.ref = "kakao" }
+
 
 
 [plugins]
