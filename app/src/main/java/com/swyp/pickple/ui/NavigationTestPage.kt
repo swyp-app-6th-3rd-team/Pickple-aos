@@ -17,24 +17,33 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import com.swyp.core.navigation.PageNavRoute
-import com.swyp.core.navigation.PickpleNavSuper
+import androidx.navigation.NavHostController
+import com.swyp.core.navigation.PickpleNavRoute
+import com.swyp.features.community.navigation.CommunityNavGraph
+import com.swyp.features.home.navigation.HomeNavGraph
+import com.swyp.features.mypage.navigation.MyPageNavGraph
+import com.swyp.features.onboarding.ui.navigation.OnboardingGraph
+import kotlinx.serialization.Serializable
 
 
 data class RouteItem (
     val title: String,
-    val route: PickpleNavSuper
+    val route: PickpleNavRoute
 )
+
+@Serializable
+data object NavigationTestPage : PickpleNavRoute
 
 
 @Composable
 fun NavigationTestPage(
-    onRouteClick: (PickpleNavSuper) -> Unit = {}
+    navController: NavHostController,
 ){
     val items = listOf(
-        RouteItem("onboarding", PageNavRoute.Onboarding),
-        RouteItem("community", PageNavRoute.Community),
-        RouteItem("mypage", PageNavRoute.MyPage),
+        RouteItem("onboarding", OnboardingGraph),
+        RouteItem("community", CommunityNavGraph),
+        RouteItem("mypage", MyPageNavGraph),
+        RouteItem("home", HomeNavGraph),
     )
 
     LazyVerticalGrid(
@@ -46,7 +55,7 @@ fun NavigationTestPage(
     ) {
         items(items) { item ->
             Card(
-                onClick = {onRouteClick(item.route)},
+                onClick = {navController.navigate(route = item.route)},
                 modifier = Modifier.fillMaxWidth()
             ) {
                 Text(
