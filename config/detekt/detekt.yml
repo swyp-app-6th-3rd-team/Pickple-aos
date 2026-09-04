@@ -130,9 +130,15 @@ complexity:
   LongMethod:
     active: true
     threshold: 60
+    ignoreAnnotated :
+      - 'Preview'
+      - 'PreviewOnDevice'
+      - 'PreviewOnSize'
   LongParameterList:
     active: true
     functionThreshold: 6
+    ignoreAnnotated:
+      - 'Composable'
     constructorThreshold: 7
     ignoreDefaultParameters: false
     ignoreDataClasses: true
@@ -623,11 +629,23 @@ style:
   MagicNumber:
     active: true
     excludes: ['**/test/**', '**/androidTest/**', '**/commonTest/**', '**/jvmTest/**', '**/androidUnitTest/**', '**/androidInstrumentedTest/**', '**/jsTest/**', '**/iosTest/**', '**/*.kts']
+    ignoreAnnotated:
+      - 'Preview'
+      - 'PreviewOnDevice'
+      - 'PreviewOnSize'
     ignoreNumbers:
       - '-1'
       - '0'
       - '1'
       - '2'
+      - '4'
+      - '8'
+      - '12'
+      - '16'
+      - '20'
+      - '24'
+      - '32'
+      - '48'
     ignoreHashCodeFunction: true
     ignorePropertyDeclaration: false
     ignoreLocalVariableDeclaration: false
