@@ -37,7 +37,7 @@ fun PreviewBase(modifier: Modifier = Modifier, content: @Composable () -> Unit){
     Column(
         modifier = Modifier.fillMaxSize()
             .background(White)
-            .padding(horizontal = 5.dp)
+            .padding(horizontal = 20.dp)
             .then(modifier),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
